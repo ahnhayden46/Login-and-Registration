@@ -83,6 +83,8 @@ def activate(request, uidb64, token):
                 'contact_number')
             Customer.objects.create(user=user, username=user.username,
                                     email=user.email, contact_number=contact_number)
+            messages.success(
+                request, 'Your account has been succesfully activated.')
             return redirect('login')
     return render(request, 'login/activate.html', context)
 
@@ -107,19 +109,6 @@ def loginPage(request):
 def logoutPage(request):
     logout(request)
     return redirect(loginPage)
-
-
-@login_required(login_url='login')
-def userPage(request):
-    context = {}
-    return render(request, 'login/user.html', context)
-
-
-@login_required(login_url='login')
-@admin_only
-def home(request):
-    context = {}
-    return render(request, 'login/dashboard.html', context)
 
 
 # Create your views here.

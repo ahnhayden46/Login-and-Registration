@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'login.apps.LoginConfig',
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -78,8 +79,12 @@ WSGI_APPLICATION = 'loginForm.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'login',
+        'USER': 'mikaela2080',
+        'PASSWORD': 'asspark1128',
+        'HOST': 'login.ch9fo8n1xlpd.eu-west-2.rds.amazonaws.com',
+        'PORT': '5432',
     }
 }
 
@@ -138,3 +143,14 @@ STATIC_URL = '/static/'
 MEDIA_URL = '/images/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'login/static/images')
+
+AWS_S3_HOST = "s3.eu-west-2.amazonaws.com"
+AWS_S3_REGION_NAME = "eu-west-2"
+AWS_S3_ADDRESSING_STYLE = "virtual"
+AWS_ACCESS_KEY_ID = 'AKIAXVQ5LXVHOZ3PD3VK'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'mikaela2080'
+AWS_S3_FILE_OVERWRITE = True
+AWS_DEFAULT_ACL = None
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
