@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Lovejoy's Antique Evaluation</title>
+
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td,
+        th {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Lovejoy's Antique Evaluation</h1>
+    <span><a href={% url 'logout' %}>Logout</a></span>
+    {% if request.user.is_staff %}
+    <br>
+    <span><a href={% url 'evaluation-requests' %}>Evaluation Requests</a></span>
+    {% endif %}
+    <div class="container-fluid">
+        {% block content %}
+
+
+
+        {% endblock %}
+    </div>
+    <hr>
+
+</body>
+
+</html>

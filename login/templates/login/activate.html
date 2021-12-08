@@ -1,0 +1,8 @@
+<h3>Complete Registration</h3>
+
+<form method="POST" action="">
+    {% csrf_token %}
+    {{customerForm.as_p}}
+    <input type="submit" name="Create User">
+    <a href="{% url 'login' %}" class="ml-2">Login</a>
+</form>

@@ -1,0 +1,40 @@
+{% extends 'login/main.html' %}
+
+{% block content %}
+
+<br>
+
+<div class="row">
+    <div class="col-md-5">
+        <p>Hello, {{request.user}}</p>
+
+        <div class="col-md-7">
+            <h5>Requests</h5>
+            <table>
+                <tr>
+                    <th>Product</th>
+                    <th>Date Orderd</th>
+                    <th>Status</th>
+                    <th>Update</th>
+                    <th>Remove</th>
+                </tr>
+
+                {% for order in orders %}
+                <tr>
+                    <td>{{order.product}}</td>
+                    <td>{{order.date_created}}</td>
+                    <td>{{order.status}}</td>
+                    <td><a href="">Update</a></td>
+                    <td><a href="">Delete</a></td>
+
+                </tr>
+                {% endfor %}
+
+
+            </table>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

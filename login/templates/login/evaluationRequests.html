@@ -1,0 +1,33 @@
+{% extends 'login/main.html' %}
+
+{% block content %}
+
+<br>
+
+<p>Hello, {{request.user}}</p>
+
+<div>
+    <h5>Requests</h5>
+    <table>
+        <tr>
+            <th>Customer</th>
+            <th>Date Requested</th>
+            <th>Description</th>
+            <th>Image</th>
+        </tr>
+
+        {% for evaluation in evaluations %}
+        <tr>
+            <td>{{evaluation.customer}}</td>
+            <td>{{evaluation.date_created}}</td>
+            <td>{{evaluation.description}}</td>
+            <td><img src="{{evaluation.image.url}}" style="width: 10em; height: 10em;"></td>
+        </tr>
+        {% endfor %}
+
+
+    </table>
+</div>
+
+
+{% endblock %}
