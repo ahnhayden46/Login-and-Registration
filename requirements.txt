@@ -6,7 +6,7 @@ Django==3.2.9
 django-environ==0.8.1
 django-storages==1.12.3
 docutils 
-gunicorn==20.1.0
+gunicorn==20.0.4
 jmespath==0.10.0
 Pillow 
 python-dateutil 
