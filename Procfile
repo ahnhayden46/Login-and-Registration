@@ -1,1 +1,1 @@
-web: gunicorn loginForm:wsgi.py --log-file -
+web: gunicorn loginForm:wsgi:application --log-file -
