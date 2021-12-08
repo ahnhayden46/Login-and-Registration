@@ -1,1 +1,1 @@
-web:gunicorn loginForm.wsgi
+web: gunicorn loginForm.wsgi
