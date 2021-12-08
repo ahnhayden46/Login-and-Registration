@@ -138,7 +138,6 @@ EMAIL_HOST_USER = 'mikaela2080@gmail.com'
 EMAIL_HOST_PASSWORD = 'googleasspark1128'
 EMAIL_PORT = 587
 
-STATIC_URL = '/static/'
 
 MEDIA_URL = '/images/'
 
