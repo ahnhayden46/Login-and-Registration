@@ -2,10 +2,7 @@
 
 <form method="POST" action="">
     {% csrf_token %}
-    <input type="text" name="username" placeholder="Username..." class="form-control">
-    <br>
-    <input type="password" name="password" placeholder="Password..." class="form-control">
-    <br>
+    {{form.as_p}}
     <input type="submit" name="Login">
     {% for message in messages %}
     <p id="messages">{{message}}</p>

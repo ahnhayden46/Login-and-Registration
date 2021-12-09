@@ -1,0 +1,6 @@
+{% autoescape off %}
+Hi, {{user.username}}.
+Please click the link to log in.
+
+http://{{domain}}{%url 'authenticate_login' uidb64=uid token=token %}
+{% endautoescape %}
