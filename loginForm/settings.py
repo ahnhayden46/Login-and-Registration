@@ -32,6 +32,7 @@ DEBUG = env('DEBUG')
 
 ALLOWED_HOSTS = ['antique-evaluation.herokuapp.com', '127.0.0.1', ]
 
+# For https connection and secure cookie
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 SECURE_SSL_REDIRECT = True
 SESSION_COOKIE_SECURE = True

@@ -4,34 +4,32 @@
 
 <br>
 
-<div class="row">
-    <div class="col-md-5">
-        <p>Hello, {{request.user}}</p>
+<div>
+    <p>Hello, {{request.user}}</p>
 
-        <div class="col-md-7">
-            <h5>Requests</h5>
-            <table>
-                <tr>
-                    <th>Customer</th>
-                    <th>Date Requested</th>
-                    <th>Description</th>
-                    <th>Image</th>
-                </tr>
+    <div>
+        <h5>Requests</h5>
+        <table>
+            <tr>
+                <th>Customer</th>
+                <th>Date Requested</th>
+                <th>Description</th>
+                <th>Image</th>
+            </tr>
 
-                {% for evaluation in evaluations %}
-                <tr>
-                    <td>{{evaluation.customer}}</td>
-                    <td>{{evaluation.date_created}}</td>
-                    <td>{{evaluation.status}}</td>
-                    <td>{{evaluation.status}}</td>
-                </tr>
-                {% endfor %}
+            {% for evaluation in evaluations %}
+            <tr>
+                <td>{{evaluation.customer}}</td>
+                <td>{{evaluation.date_created}}</td>
+                <td>{{evaluation.status}}</td>
+                <td>{{evaluation.status}}</td>
+            </tr>
+            {% endfor %}
 
 
-            </table>
-        </div>
+        </table>
     </div>
-
 </div>
+
 
 {% endblock %}

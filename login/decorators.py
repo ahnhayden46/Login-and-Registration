@@ -1,7 +1,7 @@
-from django.http import HttpResponse
 from django.shortcuts import redirect
 
 
+# Only show the page when the user is admin
 def admin_only(view_func):
     def wrapper_func(request, *args, **kwargs):
         group = None
